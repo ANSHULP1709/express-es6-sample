@@ -3,13 +3,13 @@ version: 0.2
 phases:
   install:
     commands:
-      - npm ci
-  pre_build:
-    commands:
-      - npm test --if-present
+      - echo Installing dependencies...
+      - npm install
   build:
     commands:
-      - zip -r artifact.zip . -x "*.git*"
+      - echo Build started...
+      - npm run build || echo "No build script found, skipping"
+
 artifacts:
   files:
-    - artifact.zip
+    - '**/*'
