@@ -1,11 +1,12 @@
-version: 0.2
-phases:
-  install:
-    commands:
-      - npm ci
-  build:
-    commands:
-      - npm test --if-present
-artifacts:
-  files:
-    - '**/*'
+yaml
+   version: 0.2
+
+   phases:
+     install:
+       commands:
+         - npm install
+     build:
+       commands:
+         - echo Running tests...
+         - npm test
+   
